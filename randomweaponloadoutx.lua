@@ -24,22 +24,11 @@ hook.Add("PlayerLoadout", "GiveWeapon", function(ply)
     local primaryweapon = table.Random( weapons.primary )
     local secondaryweapon = table.Random( weapons.secondary )
     local grenade = table.Random( weapons.grenade )
-    
-  
+      
     ply:Give(primaryweapon.name)
-    
-  
+      
     ply:Give(secondaryweapon.name)
     
-  
-    if primaryweapon.ammo == secondaryweapon.ammo then
-        ply:GiveAmmo(primaryweapon.clipsize, primaryweapon.ammo)
-    elseif primaryweapon.ammo == ""then
-        ply:GiveAmmo(secondaryweapon.clipsize, secondaryweapon.ammo)
-    else
-        ply:GiveAmmo(primaryweapon.clipsize, primaryweapon.ammo)
-        ply:GiveAmmo(secondaryweapon.clipsize, secondaryweapon.ammo)
-    end
     noDrop = {"weapon_fists"}    
     
     ply:Give(grenade.name)
